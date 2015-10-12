@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>MiML2</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" href="http://masted.ru/i/css/common/screen.css">
+  <link rel="stylesheet" type="text/css" href="http://masted.ru/i/css/common/layout.css">
+  <link rel="stylesheet" type="text/css" href="m/css/design.css">
+  <link rel="stylesheet" type="text/css" href="m/css/menu.css">
+  <link rel="stylesheet" type="text/css" href="m/css/greenBtn.css">
+  <!-- highlightjs -->
+  <link rel="stylesheet" href="m/css/hljs/atelier-forest.light.css">
+  <script src="m/js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script>
+  var showDemo = function(n) {
+    document.getElementById('iframe').src='../demo'+n+'/index.html';
+  };
+  </script>
+</head>
+<body>
+<style>
+body {
+background: url(m/img/header-bg.png) top center repeat-x;
+}
+.body {
+background: url(m/img/header.png) top center no-repeat;
+min-height: 410px;
+}
+.container {
+position: relative;
+}
+iframe {
+position: absolute;
+left: 543px;
+top: 75px;
+width: 247px;
+height: 375px;
+background: #fff;
+transform-origin: 0 0;
+transform: scale(0.75);
+}
+.api li span {
+color: #888;
+}
+</style>
+<div class="body">
+  <div class="container">
+    <iframe src="../demo1/index.html" id="iframe"></iframe>
+    <div class="title">
+      минималистичный мобильный лейаут
+    </div>
+    <div class="overview">
+      Создавайте списки для мобильной версии сайта с быстрым простотром содержимого <u>без перезагрузки страницы</u>
+    </div>
+      <a href="#source" class="greenBtn">Скачать <span>v.2.0</span></a>
+    <div class="menu">
+      <a href="#example">Пример</a>
+      <a href="#api">API</a>
+      <a href="#source">Исходник</a>
+    </div>
+    
+    <div class="content">
+    <h2>Обзор</h2>
+    <p>
+      Главным нововведением в MiMl2 является компонент навигации для списокв.
+      Он подходит для тех случаев когда просмотр содержимого страниц хотелось бы
+      делать моментально без загрузки контента с сервера.
+    </p>
+    <p>
+      Это может быть всё, что угодно: список
+      произведений для прочтения, список тем форума, список новостей. Все те случаи,
+      когда хотелось бы быстренько посмотреть содержимое страницы, а ждать ответа от сервера 
+      слишком долгая задача особенно для мобильного интернета.
+    </p>
+
+    <a name="api"></a>
+    <h2>API</h2>
+    <p>Функионал списков настраивается опциями класса <i>Ngn.FramesSlider.List</i></p>
+    <ul class="api">
+      <li>
+        <b>titleSelector</b> <span>String</span>
+        значение по умолчанию: <i>.header .title</i><br>
+        CSS селектор для заголовка страницы
+      </li>
+      <li>
+        <b>listSelector</b> <span>String</span>
+        значение по умолчанию: <i>.list</i><br>
+        CSS селектор для контейнера со списком
+      </li>
+      <li>
+        <b>listItemSelector</b> <span>String</span>
+        значение по умолчанию: <i>.item</i><br>
+        CSS селектор элемента списка
+      </li>
+      <li>
+        <b>itemTitleSelector</b> <span>String</span>
+        значение по умолчанию: <i>.title</i><br>
+        CSS селектор для заголовка элемента списка
+      </li>
+      <li>
+        <b>itemTitleSelector</b> <span>Array of Strings</span>
+        значение по умолчанию: <i>['.text']</i><br>
+        CSS селекторы для элементов, которые будут отображаться во втором фрейме
+      </li>
+    </ul>
+
+    <h2>Пример 1. Базовый</h2>
+    <div class="demoLinks">
+      <a href="" onclick="showDemo(1)">Демо на сайте</a>
+      <a href="../demo1/index.html">Демо для мибилки</a>
+    </div>
+    Список из заголовка и текста, который открывается на
+    втором слайде. В HTML-коде использован лейаут с теми классами, что указаны
+    в значениях по умолчанию (см. <a href="#api">API</a>).
+    <h3>JS</h3>
+    <pre>
+      <code class="javascript">
+new Ngn.ListSlider(
+  new Ngn.FramesSlider(
+    document.getElement('#framesBody')
+  )
+);
+      </code>
+    </pre>
+    <h3>HTML</h3>
+    <pre>
+    <code class="html">&lt;div id="framesBody"&gt;
+  &lt;div class="frame"&gt;
+    &lt;div class="list"&gt;
+      &lt;div class="item"&gt;
+        &lt;div class="title"&gt;title&lt;/div&gt;
+        &lt;div class="text">html for second slide&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; </code>
+    </pre>
+
+    <h2>Пример 2. Афиша</h2>
+    <div class="demoLinks">
+      <a href="#" onclick="showDemo(2)">Демо на сайте</a>
+      <a href="../demo2/index.html">Демо для мибилки</a>
+    </div>
+
+Пример с более сложным лейаутом. Заголовочный элемент имеет 2 дочерних - это 
+дата и сам заголовок. Для того, то бы значение заголовка для второго слайда 
+взялось правильно, указываем селектор <b>.title .tit</b> для опции <b>itemTitleSelector</b>.
+
+    <h3>JS</h3>
+    <pre>
+      <code class="javascript">new Ngn.ListSlider(
+  new Ngn.FramesSlider.List(
+    document.getElement('#framesBody')),
+    {
+      itemTitleSelector: '.title .tit'
+    }
+);</code>
+      </pre>
+      <h3>HTML</h3>
+      <pre>
+      <code class="html">&lt;div class="list"&gt;
+  &lt;div class="item" data-id="1"&gt;
+    &lt;div class="title"&gt;
+      &lt;div class="date"&gt;04 Окт&lt;br&gt;17:00&lt;/div&gt;
+      &lt;div class="tit"&gt;Путешествие к себе&lt;/div&gt;
+      &lt;div style="clear:both"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="text"&gt;
+      &lt;p&gt;&lt;img src="u/dd/afisha/17693/md_image.jpg"&gt;&lt;/p&gt;
+      &lt;p&gt;
+        &lt;b&gt;Место:&lt;/b&gt;
+        Свято-Троицкий мужской монастырь Александра Свирского
+        (город Старая Слобода в Ленинградской области).
+      &lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;Вход:&lt;/b&gt; 3000 руб.&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;Дата, время:&lt;/b&gt; 4 октября 2015 в 17:00&lt;/p&gt;
+      Многие правители перед тем как взойти на престол ездили к нему за 
+      благословением:&lt;br/&gt;— Он наделяет благоразумием, способностью 
+      видеть ситуации целостно и принимать спокойные мудрые решения.&lt;br/&gt;
+      — Даёт уверенность в своих силах, точное осознания того, как нужно
+      поступать,&lt;br/&gt;— Помогает верно распоряжаться финансами и находить 
+      выход из любой ситуации.&lt;br/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="item" data-id="2"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+      </pre>
+
+<h2>Пример 3. Расписание транспорта</h2>
+
+  </div>
+  </div>
+</div>
+</body>
+</html>

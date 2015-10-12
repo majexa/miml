@@ -1,0 +1,38 @@
+.body .container {
+padding-top: 120px;
+}
+.title {
+padding-left: 229px;
+width: 300px;
+font-family: Boblic;
+font-size: 15px;
+color: #CFCED3;
+height: 65px;
+}
+.overview {
+margin-top: -7px;
+text-align: center;
+color: #CFCED3;
+width: 300px;
+padding-left: 190px;
+font-style: Italic;
+font-family: Georgia;
+font-size: 14px;
+}
+.menu {
+margin-top: 95px;
+padding-left: 130px;
+font-family: Boblic;
+font-size: 22px;
+}
+.menu a {
+color: #43413E;
+display: inline-block;
+background: url(../img/icon.png) no-repeat;
+padding-left: 30px;
+min-height: 69px;
+margin-right: 30px;
+}
+.menu a:hover {
+color: #000;
+}

@@ -1,0 +1,64 @@
+@font-face {
+font-family: Boblic;
+src: local("Boblic"),
+url(../font/boblic.otf);
+}
+@font-face {
+font-family: Kaufmann;
+src: local("Kaufmann BT"),
+url(../font/kaufmann-bt.otf);
+}
+@font-face {
+font-family: Freehand521;
+src: local("Freehand521"),
+url(../font/freehand521-bt.otf);
+}
+.container {
+width: 740px;
+}
+pre {
+margin: 0px;
+line-height: 0;
+}
+code {
+border-radius: 7px;
+
+font-weight: bold;
+font-size: 10px;
+}
+.content {
+width: 450px;
+margin-left: 110px;
+}
+
+
+h2 {
+font-family: Boblic;
+color: #9765AC;
+font-size: 24px;
+font-weight: bold;
+margin-top: 25px;
+}
+h3 {
+font-family: Boblic;
+color: #0090CC;
+font-size: 17px;
+font-weight: bold;
+margin-top: 15px;
+}
+
+body {
+font-size: 12px;
+}
+
+.demoLinks {
+display: block;
+margin-bottom: 10px;
+}
+.demoLinks a {
+font-family: Boblic;
+font-size: 16px;
+color: #000;
+display: inline-block;
+margin-right: 7px;
+}

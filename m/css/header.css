@@ -23,7 +23,10 @@ right: 0;
 width: 40px;
 height: 40px;
 z-index: 10;
-background: #555 url(../img/arrow-left.png) no-repeat center center;
+background: #444 url(../img/arrow-left.png) no-repeat center center;
+}
+.hBackBtnMenu {
+background-image: url(../img/arrow-left-menu.png) !important;
 }
 .hMenuBtn {
 position: absolute;
@@ -31,5 +34,5 @@ top: 0;
 left: 0;
 width: 40px;
 height: 40px;
-background: #555 url(../img/menu.png) no-repeat center center;
+background: #444 url(../img/menu.png) no-repeat center center;
 }
