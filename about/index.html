@@ -3,8 +3,8 @@
 <head>
   <title>MiML2</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" type="text/css" href="http://masted.ru/i/css/common/screen.css">
-  <link rel="stylesheet" type="text/css" href="http://masted.ru/i/css/common/layout.css">
+  <link rel="stylesheet" type="text/css" href="i/css/common/screen.css">
+  <link rel="stylesheet" type="text/css" href="i/css/common/layout.css">
   <link rel="stylesheet" type="text/css" href="m/css/design.css">
   <link rel="stylesheet" type="text/css" href="m/css/menu.css">
   <link rel="stylesheet" type="text/css" href="m/css/greenBtn.css">
@@ -45,6 +45,9 @@ transform: scale(0.75);
 .api li span {
 color: #888;
 }
+b {
+white-space: nowrap;
+}
 </style>
 <div class="body">
   <div class="container">
@@ -65,7 +68,7 @@ color: #888;
     <div class="content">
     <h2>Обзор</h2>
     <p>
-      Главным нововведением в MiMl2 является компонент навигации для списокв.
+      Главным нововведением в <b>MiMl2</b> является компонент навигации для списокв.
       Он подходит для тех случаев когда просмотр содержимого страниц хотелось бы
       делать моментально без загрузки контента с сервера.
     </p>
@@ -78,6 +81,10 @@ color: #888;
 
     <a name="api"></a>
     <h2>API</h2>
+    <pre>
+      <code>new Ngn.ListSlider(new Ngn.FramesSlider(container));</code>
+    </pre>
+    <br>
     <p>Функионал списков настраивается опциями класса <i>Ngn.FramesSlider.List</i></p>
     <ul class="api">
       <li>
@@ -109,12 +116,20 @@ color: #888;
 
     <h2>Пример 1. Базовый</h2>
     <div class="demoLinks">
-      <a href="" onclick="showDemo(1)">Демо на сайте</a>
+      <a href="#" onclick="showDemo(1)">Демо на сайте</a>
       <a href="../demo1/index.html">Демо для мибилки</a>
     </div>
-    Список из заголовка и текста, который открывается на
-    втором слайде. В HTML-коде использован лейаут с теми классами, что указаны
-    в значениях по умолчанию (см. <a href="#api">API</a>).
+    <p>
+      Список из заголовка и текста, который открывается на
+      втором слайде. В HTML-коде использован лейаут с теми классами, что указаны
+      в значениях по умолчанию (см. <a href="#api">API</a>).
+    </p>
+    <h3>data-id</h3>
+    <p>
+      Элементы <b>.item</b> должны обязательно
+      иметь атрибут <b>data-id</b> с уникальным идентификатором. Он необходим для сохранения
+      позиции скролла для каждого слайда в отдельности.
+    </p>
     <h3>JS</h3>
     <pre>
       <code class="javascript">
@@ -130,7 +145,7 @@ new Ngn.ListSlider(
     <code class="html">&lt;div id="framesBody"&gt;
   &lt;div class="frame"&gt;
     &lt;div class="list"&gt;
-      &lt;div class="item"&gt;
+      &lt;div class="item" data-id="1"&gt;
         &lt;div class="title"&gt;title&lt;/div&gt;
         &lt;div class="text">html for second slide&lt;/div&gt;
       &lt;/div&gt;
@@ -191,8 +206,62 @@ new Ngn.ListSlider(
 &lt;/div&gt;</code>
       </pre>
 
-<h2>Пример 3. Расписание транспорта</h2>
+    <h2>Пример 3. Расписание транспорта</h2>
+    <div class="demoLinks">
+      <a href="#" onclick="showDemo(3)">Демо на сайте</a>
+      <a href="../demo3/index.html">Демо для мибилки</a>
+    </div>
+В предыдущих примерах контейнера <b>.text</b> переносился во второй
+слайд. Это определяется стандартным значением опции <b>contentSelectors</b>.
+В этом примере селектор text не подходит, т.к. содержит отступ, который не
+хотелось бы переопределять в связи с совместимостью. Так что просто заменим его
+на <b>.table</b>:
+    <h3>JS</h3>
+    <pre>
+      <code class="javascript">new Ngn.ListSlider(
+  new Ngn.FramesSlider.List(
+    document.getElement('#framesBody')),
+    {
+      itemTitleSelector: '.title .tit',
+      contentSelectors: ['.table']
+    }
+);</code>
+    </pre>
 
+      <h3>HTML</h3>
+      <pre>
+      <code class="html">&lt;div id="framesBody"&gt;
+&lt;div class="frame"&gt;
+  &lt;div class="list"&gt;
+    &lt;div class="item" data-id="1"&gt;
+      &lt;div class="title"&gt;
+        &lt;span class="type suburban"&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;span class="tit"&gt;
+&lt;b&gt;№6319&lt;/b&gt; Нижний Новгород (Московский вокзал) - Гороховец
+&lt;/span&gt;
+        &lt;span class="time"&gt;17:27&lt;/span&gt;
+        &lt;span class="state"&gt;отправлен&lt;/span&gt;
+        &lt;div style="clear:both"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="table"&gt;
+&lt;table&gt;
+&lt;tr class="tHeader"&gt;
+  &lt;td&gt;маршрут&lt;/td&gt;
+  &lt;td&gt;прибытие&lt;/td&gt;
+  &lt;td&gt;стоянка&lt;/td&gt;
+  &lt;td&gt;отправление&lt;/td&gt;
+  &lt;td&gt;в пути&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td style="width:50%"&gt;Нижний Новгород (Московский вокзал)&lt;/td&gt;
+  &lt;td&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;/td&gt;
+  &lt;td&gt;17:27&lt;/td&gt;
+  &lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+...
+&lt;/table&gt;</code>
+      </pre>
   </div>
   </div>
 </div>

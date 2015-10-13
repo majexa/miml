@@ -1,0 +1,65 @@
+.list .title {
+height: 45px;
+display: table;
+}
+.list .title span {
+display: table-cell;
+vertical-align: middle;
+border-right: 1px solid #ccc;
+padding: 0px 10px;
+}
+table .tHeader td {
+font-weight: bold;
+}
+.list .tit {
+width: 100%;
+font-size: 12px;
+padding-left: 7px;
+}
+.list .time {
+font-size: 12px;
+width: 50px;
+}
+.list .state {
+font-size: 12px;
+width: 50px;
+}
+.list .title span.state {
+border-right: 0px;
+}
+.list .title span.type {
+border-right: 0px;
+padding-left: 0px;
+padding-top: 7px;
+}
+.list .title span.tit {
+padding-left: 0px;
+}
+
+.item .title .type i {
+display: block;
+width: 17px;
+height: 17px;
+background: url(http://yandex.st/rasp/3.3938832/blocks-desktop/b-transico/b-transico.png) no-repeat;
+}
+.item .title .type.suburban i {
+background-position: -68px 0;
+}
+.item .title .type.train i {
+background-position: -34px 0;
+}
+
+.table table {
+width: 100%;
+}
+.table img {
+max-width: 100%;
+}
+.table table td {
+font-size: 12px;
+border-bottom: 1px solid #ccc;
+padding: 10px 5px 10px 5px;
+}
+.table .nowrap {
+white-space: nowrap;
+}
