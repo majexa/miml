@@ -62,3 +62,11 @@ color: #000;
 display: inline-block;
 margin-right: 7px;
 }
+
+b {
+white-space: nowrap;
+}
+
+.api li span {
+color: #888;
+}

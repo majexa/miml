@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="i/css/common/layout.css">
   <link rel="stylesheet" type="text/css" href="m/css/design.css">
   <link rel="stylesheet" type="text/css" href="m/css/menu.css">
+  <link rel="stylesheet" type="text/css" href="m/css/header.css">
   <link rel="stylesheet" type="text/css" href="m/css/greenBtn.css">
   <!-- highlightjs -->
   <link rel="stylesheet" href="m/css/hljs/atelier-forest.light.css">
@@ -21,34 +22,6 @@
   </script>
 </head>
 <body>
-<style>
-body {
-background: url(m/img/header-bg.png) top center repeat-x;
-}
-.body {
-background: url(m/img/header.png) top center no-repeat;
-min-height: 410px;
-}
-.container {
-position: relative;
-}
-iframe {
-position: absolute;
-left: 543px;
-top: 75px;
-width: 247px;
-height: 375px;
-background: #fff;
-transform-origin: 0 0;
-transform: scale(0.75);
-}
-.api li span {
-color: #888;
-}
-b {
-white-space: nowrap;
-}
-</style>
 <div class="body">
   <div class="container">
     <iframe src="../demo1/index.html" id="iframe"></iframe>
@@ -58,25 +31,28 @@ white-space: nowrap;
     <div class="overview">
       Создавайте списки для мобильной версии сайта с быстрым простотром содержимого <u>без перезагрузки страницы</u>
     </div>
-      <a href="#source" class="greenBtn">Скачать <span>v.2.0</span></a>
+      <a href="https://github.com/masted/miml/archive/v2.0.zip" class="greenBtn">Скачать <span>v.2.0</span></a>
     <div class="menu">
-      <a href="#example">Пример</a>
+      <span>Пример</span>
+      <a href="#example1" class="ex">1</a>
+      <a href="#example2" class="ex">2</a>
+      <a href="#example3" class="ex">3</a>
       <a href="#api">API</a>
-      <a href="#source">Исходник</a>
+      <a href="https://github.com/masted/miml/tree/v2.0" target="_blank">Исходник</a>
     </div>
     
     <div class="content">
     <h2>Обзор</h2>
     <p>
-      Главным нововведением в <b>MiMl2</b> является компонент навигации для списокв.
-      Он подходит для тех случаев когда просмотр содержимого страниц хотелось бы
-      делать моментально без загрузки контента с сервера.
+      Главным нововведением в <b>MiML2</b> является компонент навигации для списков.
+      Он подходит для тех случаев, когда просмотр содержимого страниц хотелось бы
+      делать моментально, без загрузки контента с сервера.
     </p>
     <p>
-      Это может быть всё, что угодно: список
+      Это может быть всё что угодно: список
       произведений для прочтения, список тем форума, список новостей. Все те случаи,
       когда хотелось бы быстренько посмотреть содержимое страницы, а ждать ответа от сервера 
-      слишком долгая задача особенно для мобильного интернета.
+      слишком долгая задача, особенно для мобильного интернета.
     </p>
 
     <a name="api"></a>
@@ -114,6 +90,7 @@ white-space: nowrap;
       </li>
     </ul>
 
+    <a name="example1"></a>
     <h2>Пример 1. Базовый</h2>
     <div class="demoLinks">
       <a href="#" onclick="showDemo(1)">Демо на сайте</a>
@@ -154,14 +131,15 @@ new Ngn.ListSlider(
 &lt;/div&gt; </code>
     </pre>
 
+    <a name="example2"></a>
     <h2>Пример 2. Афиша</h2>
     <div class="demoLinks">
       <a href="#" onclick="showDemo(2)">Демо на сайте</a>
       <a href="../demo2/index.html">Демо для мибилки</a>
     </div>
 
-Пример с более сложным лейаутом. Заголовочный элемент имеет 2 дочерних - это 
-дата и сам заголовок. Для того, то бы значение заголовка для второго слайда 
+Пример с более сложным лейаутом. Заголовочный элемент имеет два дочерних: 
+дата и сам заголовок. Для того, чтобы значение заголовка для второго слайда 
 взялось правильно, указываем селектор <b>.title .tit</b> для опции <b>itemTitleSelector</b>.
 
     <h3>JS</h3>
@@ -206,6 +184,7 @@ new Ngn.ListSlider(
 &lt;/div&gt;</code>
       </pre>
 
+    <a name="example3"></a>
     <h2>Пример 3. Расписание транспорта</h2>
     <div class="demoLinks">
       <a href="#" onclick="showDemo(3)">Демо на сайте</a>

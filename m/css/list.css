@@ -3,6 +3,7 @@ padding: 5px 10px;
 border-bottom: 1px solid #ccc;
 cursor: pointer;
 background: url(../img/arrow-right.png) center right no-repeat;
+min-height: 30px;
 }
 .list .item:hover {
 text-decoration: underline;

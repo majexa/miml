@@ -1,0 +1,21 @@
+body {
+background: url(../img/header-bg.png) top center repeat-x;
+}
+.body {
+background: url(../img/header.png) top center no-repeat;
+min-height: 410px;
+min-width: 740px;
+}
+.container {
+position: relative;
+}
+iframe {
+position: absolute;
+left: 543px;
+top: 75px;
+width: 247px;
+height: 375px;
+background: #fff;
+transform-origin: 0 0;
+transform: scale(0.75);
+}
