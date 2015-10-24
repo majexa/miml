@@ -1,0 +1,14 @@
+.body {
+padding: 40px 0 0 0;
+}
+.body p {
+margin-top: 0;
+}
+.subscript {
+margin-top: 30px;
+color: #555;
+font-size: 12px;
+}
+.subscript a {
+color: #555;
+}

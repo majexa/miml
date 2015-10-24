@@ -1,0 +1,13 @@
+.list .item {
+padding: 5px 10px;
+border-bottom: 1px solid #ccc;
+cursor: pointer;
+background: url(/miml/img/arrow-right.png) center right no-repeat;
+}
+.list .item:hover {
+text-decoration: underline;
+}
+.text {
+padding: 10px;
+font-size: 18px;
+}

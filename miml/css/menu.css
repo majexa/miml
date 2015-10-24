@@ -1,0 +1,13 @@
+.menu {
+position: absolute;
+width: 100%;
+height: 100%;
+background: #000;
+}
+.menu a {
+display: block;
+color: #fff;
+padding: 10px 10px;
+border-bottom: 1px solid #444;
+}
+
