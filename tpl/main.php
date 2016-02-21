@@ -20,7 +20,6 @@ Ngn.toggle = function(el) {
   }
   return false;
 };
-//(function() { window.location.reload(true); }).periodical(5000);
 </script>
 
 <a href="#" class="hBackBtn hBackBtnMenu" id="hBackBtn" onclick="return Ngn.toggle(document.getElementById('menu'))"></a>
@@ -30,7 +29,7 @@ Ngn.toggle = function(el) {
       <?= $d['pageTitle'] ?>
   </div>
 </div>
-<div class="menu" id="menu" sty le="display:none">
+<div class="menu" id="menu">
   <? $this->tpl('cp/links', $d['menu']) ?>
 </div>
 <script>Ngn.toggle(document.getElementById('menu'))</script>
